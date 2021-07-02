@@ -87,7 +87,10 @@ BOOSTVERSION=$( grep "#define BOOST_VERSION" "$BOOST_ROOT/include/boost/version.
 if [ "${BOOSTVERSION}" != "${BOOST_VERSION_MAJOR}0${BOOST_VERSION_MINOR}0${BOOST_VERSION_PATCH}" ]; then
     pushd $OPT_LOCATION &> /dev/null
 	printf "Installing Boost library...\\n"
-	curl -LO https://dl.bintray.com/boostorg/release/${BOOST_VERSION_MAJOR}.${BOOST_VERSION_MINOR}.${BOOST_VERSION_PATCH}/source/boost_$BOOST_VERSION.tar.bz2 \
+	printf "${BOOST_VERSION_MAJOR}\n"
+	printf "${BOOST_VERSION_MINOR}\n"
+	printf "${BOOST_VERSION_PATCH}\n"
+	curl -LO https://boostorg.jfrog.io/artifactory/main/release/${BOOST_VERSION_MAJOR}.${BOOST_VERSION_MINOR}.${BOOST_VERSION_PATCH}/source/boost_$BOOST_VERSION.tar.bz2 \
 	&& tar -xjf boost_$BOOST_VERSION.tar.bz2 \
 	&& cd boost_${BOOST_VERSION}\
 	&& ./bootstrap.sh --prefix=.\
