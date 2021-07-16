@@ -1,0 +1,16 @@
+1. 将linux系统的/etc/apt/sources.list替换
+	sudo mv /etc/apt/sources.list /etc/apt/sources.list.b
+	sudo cp ./dependency/sources.list /etc/apt/sources.list
+	sudo apt-get update
+	sudo apt-get upgrade
+
+2. 安装libjsoncpp 以及 clang-4.0和llvm-4.0
+	sudo apt install ./dependency/libjsoncpp0_0.6.0~rc2-3ubuntu1_amd64.deb
+	sudo apt-get install llvm-4.0-dev
+	sudo apt-get install clang-4.0-dev
+
+3. 按照README.md中的方式运行build.sh脚本
+ 
+解决缺少公钥的方法：
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv pubkey
+
