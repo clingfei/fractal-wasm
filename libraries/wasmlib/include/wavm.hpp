@@ -6,7 +6,7 @@
 #include "softfloat.hpp"
 #include "Runtime/Runtime.h"
 #include "IR/Types.h"
-
+#include <memory>
 namespace ftl {
     class wasm_context;
 

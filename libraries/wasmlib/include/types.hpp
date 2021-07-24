@@ -2,7 +2,7 @@
 
 #include <cstring>
 #include <vector>
-
+typedef unsigned char uint8_t;
 namespace ftl {
     struct sha256 {
         uint8_t _hash[32];
