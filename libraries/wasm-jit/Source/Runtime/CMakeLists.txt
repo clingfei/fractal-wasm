@@ -13,6 +13,7 @@ set(Sources
 	Threads.cpp
 	WAVMIntrinsics.cpp
   )
+cmake_policy(SET CMP0074 OLD)
 set(PublicHeaders
 	${WAVM_INCLUDE_DIR}/Runtime/Intrinsics.h
 	${WAVM_INCLUDE_DIR}/Runtime/Linker.h
